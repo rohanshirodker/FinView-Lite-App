@@ -1,0 +1,243 @@
+# FinView Lite - Investment Insights Dashboard
+
+A sleek and modern Flutter investment dashboard that provides a comprehensive view of your portfolio with interactive charts, real-time data visualization, and dark mode support.
+
+## Features
+
+### Core Features
+- **Portfolio Summary**: View total portfolio value, gain/loss with percentage calculations
+- **Holdings Management**: Detailed view of individual holdings with units, average cost, and current price
+- **Asset Allocation Chart**: Interactive pie chart showing portfolio distribution
+- **Returns Toggle**: Switch between percentage and amount views for gains/losses
+- **Sorting Options**: Sort holdings by value, gain, or name
+- **Responsive Design**: Optimized for both mobile and web platforms
+
+### Bonus Features
+- **Dark Mode**: Toggle between light and dark themes with preference persistence
+- **Mock Login**: Secure login flow with shared preferences for session management
+- **Price Refresh**: Simulate real-time price updates (±2% random variation)
+- **Smooth Animations**: Polished UI transitions and interactive elements
+- **Error Handling**: Graceful handling of empty data and edge cases
+
+## Tech Stack
+
+- **Flutter SDK**: ^3.6.0
+- **Dependencies**:
+  - `fl_chart: 0.68.0` - Beautiful and interactive charts
+  - `shared_preferences: ^2.0.0` - Local data persistence
+  - `intl: 0.20.2` - International formatting for currency and dates
+  - `google_fonts: ^6.1.0` - Custom typography
+
+## Design Approach
+
+**Sophisticated Monochrome** - Perfect for finance applications
+
+### Light Mode
+- Pure white backgrounds (#FFFFFF)
+- Soft blue-grey cards (#F8FAFC)
+- Subtle borders (#E8EDF2)
+- Teal accent for interactions (#06B6D4)
+- Green for gains (#10B981), Red for losses (#EF4444)
+
+### Dark Mode
+- Deep blue-charcoal backgrounds (#0F1419)
+- Elevated card surfaces (#1A1F26)
+- Defined borders (#2A3340)
+- Cyan accent for interactions (#22D3EE)
+- Green for gains (#34D399), Red for losses (#F87171)
+
+## Setup Instructions
+
+### Prerequisites
+- Flutter SDK 3.6.0 or higher
+- Dart SDK 3.0.0 or higher
+- Android Studio / VS Code with Flutter extensions
+- iOS Simulator (for macOS) or Android Emulator
+
+### Installation Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd project
+   ```
+
+2. **Install dependencies**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Verify Flutter setup**
+   ```bash
+   flutter doctor
+   ```
+
+4. **Run the app**
+   
+   For mobile:
+   ```bash
+   flutter run
+   ```
+   
+   For web:
+   ```bash
+   flutter run -d chrome
+   ```
+
+5. **Build for production**
+   
+   Android:
+   ```bash
+   flutter build apk --release
+   ```
+   
+   iOS:
+   ```bash
+   flutter build ios --release
+   ```
+   
+   Web:
+   ```bash
+   flutter build web --release
+   ```
+
+## Project Structure
+
+```
+lib/
+├── main.dart                           # App entry point with auth check
+├── theme.dart                          # App-wide theme configuration
+
+├── models/
+│   ├── holding.dart                    # Holding data model
+│   └── portfolio.dart                  # Portfolio data model
+
+├── services/
+│   ├── auth_service.dart               # Authentication & session management
+│   ├── portfolio_service.dart          # Data loading & price refresh
+│   └── dashboard_service.dart          # Handles filter persistence (SharedPreferences)
+
+├── screens/
+│   ├── login_screen.dart               # Mock login screen
+│   └── dashboard_screen.dart           # Main dashboard logic & layout
+
+└── widgets/
+    ├── dashboard_widget.dart           # Filter sheet, sort chips, and UI widgets
+    ├── portfolio_summary_card.dart     # Total value & gain display
+    ├── holding_card.dart               # Individual holding card
+    ├── allocation_chart.dart           # Interactive pie chart
+    └── dark_mode_toggle.dart           # Theme switcher
+
+assets/
+└── portfolio.json                      # Mock portfolio data
+```
+
+## Mock Data Format
+
+The app uses a JSON file (`assets/portfolio.json`) for mock data:
+
+```json
+{
+  "user": "Aarav Patel",
+  "portfolio_value": 150000,
+  "total_gain": 12000,
+  "holdings": [
+    {
+      "symbol": "TCS",
+      "name": "Tata Consultancy Services",
+      "units": 5,
+      "avg_cost": 3200,
+      "current_price": 3400
+    }
+  ]
+}
+```
+
+## Features Walkthrough
+
+### 1. Login Screen
+- Simple mock authentication
+- Enter any name to login
+- Session persists across app restarts
+
+### 2. Dashboard
+- **Header**: Displays username with refresh and dark mode controls
+- **Portfolio Summary**: Large card showing total value and gains
+- **Allocation Chart**: Interactive pie chart with touch feedback
+- **Controls Panel**: Toggle returns view and sort options
+- **Holdings List**: Detailed cards for each investment
+
+### 3. Interactive Features
+- **Refresh Button**: Simulates price updates with ±2% variation
+- **Sort Chips**: Sort by Value, Gain, or Name
+- **Returns Toggle**: Switch between percentage (%) and amount (₹) view
+- **Dark Mode**: Persistent theme preference
+
+## Error Handling
+
+The app gracefully handles:
+- Empty portfolio scenarios
+- Missing or invalid JSON data
+- Network delays (simulated)
+- Zero investment edge cases
+- Invalid login attempts
+
+## Testing
+
+Run the test suite:
+```bash
+flutter test
+```
+
+Run with coverage:
+```bash
+flutter test --coverage
+```
+
+## Performance Considerations
+
+- Efficient state management with StatefulWidget
+- Lazy loading of portfolio data
+- Optimized chart rendering with fl_chart
+- Minimal rebuilds using keys and const constructors
+- Responsive overflow handling
+
+## Future Enhancements
+
+- Real-time stock market API integration
+- Transaction history tracking
+- Investment recommendations
+- Push notifications for price alerts
+- Multi-portfolio support
+- Export portfolio reports as PDF
+
+## Screenshots
+
+*Add screenshots here showing:*
+- Login screen (light & dark)
+- Dashboard with portfolio summary
+- Allocation chart interaction
+- Holdings list with sorting
+- Mobile and web responsive views
+
+## Demo Video
+
+*Link to screen recording demonstrating:*
+- Login flow
+- Dashboard navigation
+- Chart interactions
+- Refresh functionality
+- Dark mode toggle
+- Responsive behavior
+
+## License
+
+This project is created as part of a frontend assignment.
+
+## Author
+
+Built with Flutter ❤️ for FinView Lite Investment Dashboard Assignment
+
+---
+
+**Note**: This is a demonstration project using mock data. No real financial transactions or data are processed.
