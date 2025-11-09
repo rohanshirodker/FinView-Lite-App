@@ -84,52 +84,50 @@ A sleek and modern Flutter investment dashboard that provides a comprehensive vi
    flutter run -d chrome
    ```
 
-5. **Build for production**
+5. **Build**
    
    Android:
    ```bash
-   flutter build apk --release
-   ```
-   
-   iOS:
-   ```bash
-   flutter build ios --release
-   ```
-   
-   Web:
-   ```bash
-   flutter build web --release
+   flutter build apk --debug
    ```
 
 ## Project Structure
 
 ```
 lib/
-├── main.dart                           # App entry point with auth check
-├── theme.dart                          # App-wide theme configuration
+├── main.dart                           # App entry point with auth check & theme setup
+├── theme.dart                          # App-wide light & dark theme configuration
 
 ├── models/
-│   ├── holding.dart                    # Holding data model
-│   └── portfolio.dart                  # Portfolio data model
+│   ├── holding.dart                    # Represents each stock/holding
+│   └── portfolio.dart                  # Portfolio model & total calculations
 
 ├── services/
-│   ├── auth_service.dart               # Authentication & session management
-│   ├── portfolio_service.dart          # Data loading & price refresh
-│   └── dashboard_service.dart          # Handles filter persistence (SharedPreferences)
+│   ├── auth_service.dart               # Handles mock login & user session
+│   ├── portfolio_service.dart          # Loads portfolio.json & refreshes prices
+│   └── dashboard_service.dart          # Manages filters & sorting preferences
 
 ├── screens/
-│   ├── login_screen.dart               # Mock login screen
-│   └── dashboard_screen.dart           # Main dashboard logic & layout
+│   ├── login_screen.dart               # Reads name from JSON & logs in
+│   └── dashboard_screen.dart           # Main dashboard view & data handling
 
 └── widgets/
-    ├── dashboard_widget.dart           # Filter sheet, sort chips, and UI widgets
-    ├── portfolio_summary_card.dart     # Total value & gain display
-    ├── holding_card.dart               # Individual holding card
-    ├── allocation_chart.dart           # Interactive pie chart
-    └── dark_mode_toggle.dart           # Theme switcher
+    ├── dashboard_widgets.dart          # Sort/filter chips & reusable UI
+    ├── portfolio_summary_card.dart     # Shows total value & gain/loss
+    ├── holding_card.dart               # Displays each stock holding
+    ├── allocation_chart.dart           # Pie chart for allocations
+    └── dark_mode_toggle.dart           # Light/Dark mode toggle
+
 
 assets/
-└── portfolio.json                      # Mock portfolio data
+├── icons/
+│   └── icon.png                        # Used for app icon & splash screen
+└── portfolio.json                      # Mock user & portfolio data
+
+Screenshots/                            # 📸 For documentation only (not included in app)
+├── Light Mode/
+├── Dark Mode/
+└── Demo Video/
 ```
 
 ## Mock Data Format
@@ -157,7 +155,6 @@ The app uses a JSON file (`assets/portfolio.json`) for mock data:
 
 ### 1. Login Screen
 - Simple mock authentication
-- Enter any name to login
 - Session persists across app restarts
 
 ### 2. Dashboard
@@ -230,13 +227,8 @@ flutter test --coverage
 - Dark mode toggle
 - Responsive behavior
 
-## License
 
-This project is created as part of a frontend assignment.
 
-## Author
-
-Built with Flutter ❤️ for FinView Lite Investment Dashboard Assignment
 
 ---
 
