@@ -212,14 +212,21 @@ flutter test --coverage
 
 *Add screenshots here showing:*
 - Login screen (light & dark)
+   ![Image Alt](https://github.com/rohanshirodker/FinView-Lite-App/blob/f1c22e833e729982ec2c15795ce603fbd24bfcbd/Screenshots/Light%20mode/Light%20-%20Login%20screen.jpg) ![Image Alt](https://github.com/rohanshirodker/FinView-Lite-App/blob/f1c22e833e729982ec2c15795ce603fbd24bfcbd/Screenshots/Dark%20mode/Dark%20-%20Login%20screen.jpg)
 - Dashboard with portfolio summary
+  ![Image Alt](https://github.com/rohanshirodker/FinView-Lite-App/blob/f1c22e833e729982ec2c15795ce603fbd24bfcbd/Screenshots/Light%20mode/Light%20-%20Dashboard%20with%20portfolio%20summary.jpg)   ![Image Alt](https://github.com/rohanshirodker/FinView-Lite-App/blob/f1c22e833e729982ec2c15795ce603fbd24bfcbd/Screenshots/Dark%20mode/Dark%20-%20Dashboard%20with%20portfolio%20summary.jpg)
 - Allocation chart interaction
+ ![image_url](https://github.com/rohanshirodker/FinView-Lite-App/blob/f1c22e833e729982ec2c15795ce603fbd24bfcbd/Screenshots/Light%20mode/Light%20-%20Full%20Dashboard.jpg)
 - Holdings list with sorting
+  ![image_url](https://github.com/rohanshirodker/FinView-Lite-App/blob/f1c22e833e729982ec2c15795ce603fbd24bfcbd/Screenshots/Light%20mode/Light%20-%20Holdings%20list%20with%20sorting.jpg)
 - Mobile and web responsive views
+
+  
 
 ## Demo Video
 
 *Link to screen recording demonstrating:*
+https://github.com/rohanshirodker/FinView-Lite-App/blob/f1c22e833e729982ec2c15795ce603fbd24bfcbd/Screenshots/Demo%20Video/Demo%20Video.mp4
 - Login flow
 - Dashboard navigation
 - Chart interactions
